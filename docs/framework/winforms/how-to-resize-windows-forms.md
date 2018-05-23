@@ -18,17 +18,24 @@ You can specify the size of your Windows Form in several ways. You can change bo
 -   Define the size of a form at run time by setting the <xref:System.Windows.Forms.Form.Size%2A> property of the form.  
   
      The following code example shows the form size set to 100 × 100 pixels.  
-  
-    ```vb  
-    Form1.Size = New System.Drawing.Size(100, 100)  
+  VB (.NET):
+    ``` 
+    FormName.Size = New System.Drawing.Size(100, 100)  
     ```  
-  
-    ```csharp  
-    Form1.Size = new System.Drawing.Size(100, 100);  
+    or 
+    ```
+    Me.Size = New System.Drawing.Size(100, 100) 
+    ```
+    ```Me``` is a refrence to the form it is used in. Most likely, Visual Studio
+    will give you this error if you use your form's name:
+    ```'Form1' cannot refer to itself through its default instance; use 'Me' instead.```<br />
+  C#:
+    ``` 
+    FormName.Size = new System.Drawing.Size(100, 100);  
     ```  
-  
-    ```cpp  
-    Form1->Size = System::Drawing::Size(100, 100);  
+  C++:
+    ```
+    FormName->Size = System::Drawing::Size(100, 100);  
     ```  
   
 ### To change form width and height programmatically  
@@ -38,15 +45,16 @@ You can specify the size of your Windows Form in several ways. You can change bo
      The following code example shows the width of the form set to 300 pixels from the left edge of the form, whereas the height stays constant.  
   
     ```vb  
-    Form1.Width = 300  
-    ```  
+    FormName.Width = 300  
+    ```  or
+    ```Me.Width = 300```
   
     ```csharp  
-    Form1.Width = 300;  
+    FormName.Width = 300;  
     ```  
   
     ```cpp  
-    Form1->Width = 300;  
+    FormName->Width = 300;  
     ```  
   
      -or-  
@@ -56,15 +64,16 @@ You can specify the size of your Windows Form in several ways. You can change bo
      However, as the following code example shows, this approach is more cumbersome than just setting <xref:System.Windows.Forms.Control.Width%2A> or <xref:System.Windows.Forms.Control.Height%2A> properties.  
   
     ```vb  
-    Form1.Size = New Size(300, Form1.Size.Height)  
-    ```  
+    FormName.Size = New Size(300, Form1.Size.Height)  
+    ``` or
+    ```Me.Size = New Size(300, Form1.Size.Height) ```
   
     ```csharp  
-    Form1.Size = new Size(300, Form1.Size.Height);  
+    FormName.Size = new Size(300, Form1.Size.Height);  
     ```  
   
     ```cpp  
-    Form1->Size = System::Drawing::Size(300, Form1->Size.Height);  
+    FormName->Size = System::Drawing::Size(300, Form1->Size.Height);  
     ```  
   
 ### To change form size by increments programmatically  
@@ -74,15 +83,16 @@ You can specify the size of your Windows Form in several ways. You can change bo
      The following code example shows the width of the form set to 200 pixels wider than the current setting.  
   
     ```vb  
-    Form1.Width += 200  
-    ```  
+    FormName.Width += 200  
+    ```  or
+    ```Me.Width += 200  ```
   
     ```csharp  
-    Form1.Width += 200;  
+    FormName.Width += 200;  
     ```  
   
     ```cpp  
-    Form1->Width += 200;  
+    FormName->Width += 200;  
     ```  
   
     > [!CAUTION]

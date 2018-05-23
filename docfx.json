@@ -226,7 +226,6 @@
     ],
     "groups": {
       "all": {
-        "moniker_range": ">= netcore-1.0 || >= netframework-1.1 || >= netstandard-1.0 || >= xamarinandroid-7.1 || >= xamarinios-10.8 || >= xamarinmac-3.0",
         "dest": "all"
       }
     },
